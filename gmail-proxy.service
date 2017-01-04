@@ -1,0 +1,10 @@
+[Unit]
+Description=HTTP Tunnel for GMail SMTP
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/env socat tcp-l:4650,fork proxy:127.0.0.1:smtp.gmail.com:465,proxyport=3128
+
+[Install]
+WantedBy=multi-user.target
