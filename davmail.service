@@ -1,0 +1,10 @@
+[Unit]
+Description=DAVmail
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/davmail /etc/davmail.conf
+
+[Install]
+WantedBy=multi-user.target
